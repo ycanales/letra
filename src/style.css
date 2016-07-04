@@ -6,14 +6,14 @@ body {
     color: #ccc;
 }
 
-.app-name {
+.song {
     text-align: center;
     background-color: #FFFF64;
     color: black;
     margin: 0;
 }
 
-.song-name {
+.artist {
     text-align: center;
     background-color: #333;
     margin-top: 0;
