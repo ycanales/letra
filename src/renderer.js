@@ -10,7 +10,7 @@ const genius = require('../secret').genius
 getLyrics()
 
 function getLyrics() {
-  let currentSong = shell.exec('osascript spotify.applescript', {async: true})
+  let currentSong = shell.exec(`osascript ${__dirname}/spotify.applescript`, {async: true})
 
   currentSong.stdout.on('data', output => {
     // ES6 array destructuring assignment
