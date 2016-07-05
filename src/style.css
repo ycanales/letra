@@ -1,9 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
     font-family: sans-serif;
     line-height: 1.5;
     background-color: black;
     color: #ccc;
+}
+
+header {
+    flex: 1 0;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+.loading {
+    margin-top: 40%;
+    color: #99a7ee;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .song {
@@ -16,11 +43,18 @@ body {
 .artist {
     text-align: center;
     background-color: #333;
-    margin-top: 0;
+    margin: 0;
     padding: .5rem 0;
 }
 
 #lyrics {
+    flex: auto;
+    margin: 0;
+    padding: 1rem 1.3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
     text-align: center;
-    margin-bottom: 1rem;
+}
+#lyrics::-webkit-scrollbar {
+    display: none;
 }
