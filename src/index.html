@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css">
   </head>
-  <body>
-    <header>
+
+  <body ng-app="app" layout="column">
+    <md-toolbar>
       <h1 class="song"></h1>
       <h2 class="artist"></h2>
-      <div class="loading">Cargando</div>
-    </header>
-    <p id="lyrics" style="white-space: pre-wrap;"></p>
+    </md-toolbar>
+
+    <div ng-controller="MainCtrl" class="container" layout="row" flex>
+      <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+        <md-list>
+          <md-list-item ng-repeat="song in playedSongs | orderBy: '-'">
+            <md-button>
+              <md-icon md-svg-src="../node_modules/material-design-icons/places/svg/production/ic_ac_unit_24px.svg"></md-icon>
+              <p>{{song.artist}}</p>
+              <p>{{song.song}}</p>
+            </md-button>
+          </md-list-item>
+        </md-list>
+      </md-sidenav>
+
+      <md-content flex>
+        <p style="white-space: pre-wrap;">{{state.song.lyrics}}</p>
+      </md-content>
+    </div>
   </body>
 
   <script>

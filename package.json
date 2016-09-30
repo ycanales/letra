@@ -26,7 +26,10 @@
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.1",
     "cheerio": "^0.20.0",
+    "material-design-icons": "^3.0.1",
     "shelljs": "^0.7.0"
   }
 }
