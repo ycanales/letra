@@ -17,8 +17,14 @@ function createTray () {
   createWindow(tray.getBounds())
 
   tray.on('click', function(event, bounds) {
+    console.log('is focused?')
+    console.log(mainWindow.isFocused())
     if (mainWindow) {
-      mainWindow.close()
+      if (!mainWindow.isFocused()) {
+        mainWindow.show()
+      } else if (mainWindow.isFocused()) {
+        mainWindow.hide()
+      }
     } else {
       createWindow(bounds)
     }
