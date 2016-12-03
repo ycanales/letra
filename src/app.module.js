@@ -1,4 +1,4 @@
 angular
   .module('app', [
-    'ngMaterial'
+    'ngMaterial',
   ])

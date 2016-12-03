@@ -1,15 +1,56 @@
 html, body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/*color: #ccc;
-color: #99a7ee;
-background-color: #FFFF64;
+.artist {
+  margin: 0;
+  text-align: center;
+  font-family: 'Akrobat';
+  font-weight: 300;
+  margin-bottom: .6rem;
+}
 
-#lyrics::-webkit-scrollbar {
-    display: none;
-}*/
+.song {
+  margin: 0;
+  text-align: center;
+  font-family: 'Akrobat';
+  font-weight: 700;
+}
+
+.lyrics {
+  white-space: pre-wrap;
+  text-align: center;
+  font-size: 1.6em;
+  font-family: 'Akrobat';
+}
+
+.SongList {
+  width: 200px;
+}
+
+.SongList-item.md-button {
+  width: 100%;
+  padding: 0.6rem 1rem 0.9rem 1rem;
+}
+
+.SongList-song,
+.SongList-artist {
+  margin: 0;
+  text-align: left;
+  font-family: 'Akrobat';
+}
+
+.SongList-song {
+  white-space: normal;
+  line-height: 1.4em;
+  font-size: 1.4em;
+}
+
+.SongList-artist {
+  font-size: 1em;
+  line-height: 1.4em;
+}
