@@ -1,3 +1,4 @@
 releases
 node_modules
-secret.js
+src/secret.js
+.DS_Store
