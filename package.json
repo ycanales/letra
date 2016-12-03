@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-aria": "^1.5.9",
     "angular-material": "^1.1.1",
     "cheerio": "^0.20.0",
     "material-design-icons": "^3.0.1",
