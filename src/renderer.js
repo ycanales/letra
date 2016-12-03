@@ -14,5 +14,6 @@ nodeRequire('angular-aria')
 nodeRequire('angular-material')
 
 nodeRequire('./app.module')
+nodeRequire('./secret')
 nodeRequire('./main.controller')
 nodeRequire('./lyrics.service')

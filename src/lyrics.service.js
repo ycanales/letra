@@ -1,10 +1,9 @@
 const shell = require('shelljs')
-const genius = require('../secret').genius
 const cheerio = require('cheerio')
 
 angular
   .module('app')
-  .service('Lyrics', function ($q, $interval, $rootScope) {
+  .service('Lyrics', function ($q, $interval, $rootScope, genius) {
     let command = `osascript ${__dirname}/spotify.applescript`
     this.latestScan = ''
     this.playedSongs = []
@@ -17,7 +16,7 @@ angular
           this.latestScan = output
           $rootScope.$broadcast('NEW-SONG', output)
         }
-      })  
+      })
     }, 1000)
 
     this.getLyrics = () => {
@@ -33,7 +32,7 @@ angular
         // Fetch API - Headers
         // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Headers
         let geniusHeaders = new Headers()
-        geniusHeaders.append('Authorization', `Bearer ${genius.accessToken}`)
+        geniusHeaders.append('Authorization', `Bearer ${genius.ACCESS_TOKEN}`)
 
         document.querySelector('.song').innerHTML = song
         document.querySelector('.artist').innerHTML = artist
