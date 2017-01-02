@@ -18,9 +18,11 @@
 
     <div ng-controller="MainCtrl" class="container" layout="row" flex>
       <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp SongList">
+        <md-button class="md-accent md-raised SongList-resume" ng-click="resume()" ng-show="state.paused">Reanudar</md-button>
+
         <md-list>
           <md-list-item ng-repeat="song in playedSongs | orderBy: '-'">
-            <md-button class="SongList-item">
+            <md-button class="SongList-item" ng-click="show(song)">
               <p class="SongList-song" ng-class="{'SongList-song--current': song.song === state.song.song}">{{song.song}}</p>
               <p class="SongList-artist">{{song.artist}}</p>
             </md-button>
@@ -29,7 +31,7 @@
       </md-sidenav>
 
       <md-content flex>
-        <p class="lyrics">{{state.song.lyrics}}</p>
+        <p class="lyrics" ng-hide="state.changing">{{state.song.lyrics}}</p>
       </md-content>
     </div>
   </body>

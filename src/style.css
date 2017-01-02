@@ -4,6 +4,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+}
+
+::selection {
+  background: rgb(197,17,98);
+  color: rgba(255,255,255,.9);
 }
 
 .artist {
@@ -27,10 +33,16 @@ html, body {
   text-align: center;
   font-size: 1.6em;
   font-family: 'Akrobat';
+  -webkit-user-select: text;
 }
 
 .SongList {
   width: 200px;
+  font-family: 'Akrobat';
+}
+
+.md-button.SongList-resume {
+  font-weight: 700;
 }
 
 .SongList-item.md-button {
@@ -42,7 +54,6 @@ html, body {
 .SongList-artist {
   margin: 0;
   text-align: left;
-  font-family: 'Akrobat';
 }
 
 .SongList-song {
@@ -58,4 +69,50 @@ html, body {
 .SongList-artist {
   font-size: 1em;
   line-height: 1.4em;
+}
+
+.SongList-resume.ng-hide-remove { animation: 0.5s fadeInDown ease; }
+.SongList-resume.ng-hide-add    { animation: 0.5s fadeOutUp ease; }
+
+.lyrics.ng-hide-remove { animation: .5s fadeInLeft ease; }
+.lyrics.ng-hide-add    { animation: .5s fadeOutRight ease; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 100%, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translate3d(0, -100%, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fadeOutUp {
+  from { opacity: 1; }
+  to   { opacity: 0; transform: translate3d(0, -100%, 0); }
+}
+
+@keyframes fadeOutDown {
+  from { opacity: 1; }
+  to   { opacity: 0; transform: translate3d(0, 100%, 0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fadeOutRight {
+  from { opacity: 1; }
+  to   { opacity: 0; transform: translate3d(100%, 0, 0); }
+}
+
+md-content {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }

@@ -19,6 +19,17 @@ angular
       })
     }, 1000)
 
+
+    this.getPlayedLyrics = song => {
+      return this.playedSongs.find(s => s.song === song.song &&
+                                        s.artist === song.artist)
+    }
+
+    this.getCurrentLyrics = () => {
+      return this.playedSongs[this.playedSongs.length - 1]
+    }
+
+
     this.getLyrics = () => {
       let deferred = $q.defer()
       let currentSong = shell.exec(command, {async: true})
