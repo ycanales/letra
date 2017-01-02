@@ -21,7 +21,7 @@
         <md-list>
           <md-list-item ng-repeat="song in playedSongs | orderBy: '-'">
             <md-button class="SongList-item">
-              <p class="SongList-song">{{song.song}}</p>
+              <p class="SongList-song" ng-class="{'SongList-song--current': song.song === state.song.song}">{{song.song}}</p>
               <p class="SongList-artist">{{song.artist}}</p>
             </md-button>
           </md-list-item>

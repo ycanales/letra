@@ -22,6 +22,7 @@ html, body {
 }
 
 .lyrics {
+  padding: 0 2rem;
   white-space: pre-wrap;
   text-align: center;
   font-size: 1.6em;
@@ -46,8 +47,12 @@ html, body {
 
 .SongList-song {
   white-space: normal;
-  line-height: 1.4em;
+  line-height: 1em;
   font-size: 1.4em;
+}
+
+.SongList-song--current {
+  font-weight: 800;
 }
 
 .SongList-artist {
