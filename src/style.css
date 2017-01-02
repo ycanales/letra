@@ -7,11 +7,6 @@ html, body {
   -webkit-user-select: none;
 }
 
-::selection {
-  background: rgb(197,17,98);
-  color: rgba(255,255,255,.9);
-}
-
 .artist {
   margin: 0;
   text-align: center;
@@ -113,6 +108,11 @@ md-content {
 }
 
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+    width: 0px;
+    background: transparent;
+}
+
+::selection {
+  background: rgb(197,17,98);
+  color: rgba(255,255,255,.9);
 }
