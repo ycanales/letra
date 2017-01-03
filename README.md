@@ -9,5 +9,7 @@
 
 - ~~Auto-update current playing song~~
 - Annotations
+- Support for more OSes
+- Support for more players
 
 Powered by [Electron](http://electron.atom.io)
