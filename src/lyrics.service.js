@@ -1,10 +1,20 @@
-const shell = require('shelljs')
 const cheerio = require('cheerio')
+const fs = require('fs')
+const path = require('path')
+const shell = require('shelljs')
+const tmp = require('tmp')
 
 angular
   .module('app')
   .service('Lyrics', function ($q, $interval, $rootScope, genius) {
-    let command = `osascript ${__dirname}/spotify.applescript`
+    // Spotify applescript is inside asar archive
+    // so its unreachable by the shell. We copy its contents
+    // to a tmp file and then call osascript on that file.
+    let spotify = fs.readFileSync(path.join(__dirname, '/spotify.applescript'))
+    let spotifyTmp = tmp.fileSync()
+    fs.writeFile(spotifyTmp.fd, spotify)
+    let command = `osascript ${spotifyTmp.name}`
+
     this.latestScan = ''
     this.playedSongs = []
 
