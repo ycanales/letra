@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="fonts/akrobat.css">
   </head>
 
-  <body ng-app="app" layout="column">
+  <body ng-app="app" ng-controller="MainCtrl" layout="column">
     <md-toolbar>
-      <h1 class="song"></h1>
-      <h2 class="artist"></h2>
+      <h1 class="song">{{state.song.song}}</h1>
+      <h2 class="artist">{{state.song.artist}}</h2>
     </md-toolbar>
 
-    <div ng-controller="MainCtrl" class="container" layout="row" flex>
+    <div class="container" layout="row" flex>
       <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp SongList">
         <md-button class="md-accent md-raised SongList-resume" ng-click="resume()" ng-show="state.paused">Reanudar</md-button>
 

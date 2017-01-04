@@ -56,8 +56,6 @@ angular
         let geniusHeaders = new Headers()
         geniusHeaders.append('Authorization', `Bearer ${genius.ACCESS_TOKEN}`)
 
-        document.querySelector('.song').innerHTML = song
-        document.querySelector('.artist').innerHTML = artist
         song = song.replace('Live', '')
         encodedSong = encodeURIComponent(`${artist} ${song}`)
 
