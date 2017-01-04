@@ -4,6 +4,13 @@
 
 **Shows the lyrics of current playing track in Spotify (macOS)**
 
+## Screenshots
+### Currently playing track
+<img src="docs/ss01.png" width="200" height="200" alt="Letra for Mac" />
+
+### Previously played track, auto-update paused
+<img src="docs/ss02.png" width="200" height="200" alt="Letra for Mac" />
+
 
 ## Coming soon
 
