@@ -5,6 +5,9 @@
 **Shows the lyrics of current playing track in Spotify (macOS)**
 
 ## Screenshots
+### Menubar icon
+<img src="docs/ss00.png" alt="Letra for Mac" />
+
 ### Currently playing track
 <img src="docs/ss01.png" alt="Letra for Mac" />
 
