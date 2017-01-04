@@ -4,17 +4,19 @@
   "description": "Lyrics from current playing song in Spotify",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "dist": "build --mac --x64"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ycanales/spotify-genius.git"
   },
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial"
+    "letra",
+    "mac",
+    "lyrics",
+    "music"
   ],
   "author": "Cristian Yáñez",
   "license": "CC0-1.0",
@@ -23,7 +25,7 @@
   },
   "homepage": "https://github.com/ycanales/letra",
   "devDependencies": {
-    "electron-builder": "^10.17.1",
+    "electron-builder": "^10.17.3",
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
@@ -33,6 +35,21 @@
     "angular-material": "^1.1.1",
     "cheerio": "^0.20.0",
     "material-design-icons": "^3.0.1",
-    "shelljs": "^0.7.0"
+    "shelljs": "^0.7.0",
+    "tmp": "0.0.31"
+  },
+  "build": {
+    "appId": "com.ycanales.letra",
+    "mac": {
+      "category": "public.app-category.entertainment"
+    },
+    "dmg": {
+      "title": "Letra for Mac"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ]
   }
 }
