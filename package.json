@@ -1,5 +1,5 @@
 {
-  "name": "SpotifyGenius",
+  "name": "Letra",
   "version": "1.0.0",
   "description": "Lyrics from current playing song in Spotify",
   "main": "src/main.js",
@@ -19,10 +19,11 @@
   "author": "Cristian Yáñez",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/ycanales/spotify-genius/issues"
+    "url": "https://github.com/ycanales/letra/issues"
   },
-  "homepage": "https://github.com/ycanales/spotify-genius",
+  "homepage": "https://github.com/ycanales/letra",
   "devDependencies": {
+    "electron-builder": "^10.17.1",
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
