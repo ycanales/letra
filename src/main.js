@@ -47,7 +47,9 @@ function createWindow (bounds) {
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  if (process.env.DEVTOOLS) {
+    mainWindow.webContents.openDevTools()
+  }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
