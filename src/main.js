@@ -21,8 +21,27 @@ function createTray () {
     console.log(mainWindow.isFocused())
     if (mainWindow) {
       if (!mainWindow.isFocused()) {
+        // analytics.event('application', 'show', 'Se muestra ventana', 1)
+        mainWindow.webContents.send('async', {
+          type: 'analytics',
+          payload: {
+            category: 'application',
+            action: 'show',
+            label: 'Se muestra ventana',
+            value: 1
+          }
+        })
         mainWindow.show()
       } else if (mainWindow.isFocused()) {
+        mainWindow.webContents.send('async', {
+          type: 'analytics',
+          payload: {
+            category: 'application',
+            action: 'hide',
+            label: 'Se oculta ventana',
+            value: 1
+          }
+        })
         mainWindow.hide()
       }
     } else {
@@ -50,6 +69,18 @@ function createWindow (bounds) {
   if (process.env.DEVTOOLS) {
     mainWindow.webContents.openDevTools()
   }
+
+  setTimeout(() => {
+    mainWindow.webContents.send('async', {
+      type: 'analytics',
+      payload: {
+        category: 'application',
+        action: 'create',
+        label: 'Se crea ventana',
+        value: 1
+      }
+    })
+  }, 4000);
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

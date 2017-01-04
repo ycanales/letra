@@ -21,6 +21,7 @@ angular
 
 
     this.getPlayedLyrics = song => {
+      analytics.event('lyrics', 'getPlayedLyrics', `${song.artist} - ${song.song}`, 1)
       return this.playedSongs.find(s => s.song === song.song &&
                                         s.artist === song.artist)
     }
@@ -71,6 +72,7 @@ angular
             let lyrics = $('.lyrics').text().trim().replace(/googletag\.cmd\.push\(.*}\);/g, '')
             let tmpSong = this.playedSongs.pop()
 
+            analytics.event('lyrics', 'getLyrics', `${tmpSong.artist} - ${tmpSong.song}`, 1)
             tmpSong.lyrics = lyrics
             this.playedSongs.push(tmpSong)
             deferred.resolve(tmpSong)

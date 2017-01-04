@@ -1,4 +1,5 @@
 releases
 node_modules
 src/secret.js
+src/analytics.js
 .DS_Store

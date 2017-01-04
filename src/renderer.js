@@ -17,3 +17,12 @@ nodeRequire('./app.module')
 nodeRequire('./secret')
 nodeRequire('./main.controller')
 nodeRequire('./lyrics.service')
+
+ipc.on('async', (event, arg) => {
+  console.log('recibiento evento')
+  console.log(arg)
+  if (arg.type === 'analytics') {
+    const {category, action, label, value} = arg.payload
+    analytics.event(category, action, label, value)
+  }
+})
