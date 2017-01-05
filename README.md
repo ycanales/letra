@@ -4,6 +4,10 @@
 
 **Shows the lyrics of current playing track in Spotify (macOS)**
 
+## Download
+
+- [Latest Release](https://github.com/ycanales/letra/releases/tag/v1.0.0)
+
 ## Screenshots
 ### Menubar icon
 <img src="docs/ss00.png" alt="Letra for Mac" />
